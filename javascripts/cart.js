@@ -5,6 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const form = document.getElementById("checkout-form");
   if (form) form.addEventListener("submit", handleCheckout);
+
+  const promoCode = new URLSearchParams(window.location.search).get("promo");
+  const promoInput = document.getElementById("promo-code-input");
+  if (promoCode && promoInput) {
+    promoInput.value = promoCode;
+    applyPromoCode();
+  }
 });
 
 function renderCartPage() {
@@ -14,7 +21,7 @@ function renderCartPage() {
 
   if (cart.length === 0) {
     container.innerHTML = `<p style="text-align: center; padding: 2rem; color: #666;">Giỏ hàng của bạn đang trống.</p>`;
-    updateTotals(0,0,0);
+    calculateTotals();
     return;
   }
 
@@ -58,20 +65,51 @@ function removeItem(id) {
   if (typeof updateCartBadge === "function") updateCartBadge();
 }
 
-let discountPercent = 0;
+let activePromoCode = "";
+
+function getPromoDiscount(cart) {
+  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  if (activePromoCode === "SAKURA10") return subtotal * 0.1;
+
+  const ramen = cart.find(item => item.category === "ramen" && item.quantity > 0);
+  const sushi = cart.find(item => item.category === "sushi" && item.quantity > 0);
+  const drink = cart.find(item => item.category === "drink" && item.quantity > 0);
+
+  if (activePromoCode === "RAMENCOMBO" && ramen && drink) {
+    return (ramen.price + drink.price) * 0.15;
+  }
+  if (activePromoCode === "SUSHICOMBO" && sushi && drink) {
+    return (sushi.price + drink.price) * 0.1;
+  }
+  return 0;
+}
+
 function applyPromoCode() {
   const input = document.getElementById("promo-code-input");
   const msg = document.getElementById("promo-msg");
   if (!input) return;
   const code = input.value.trim().toUpperCase();
+  const cart = JSON.parse(localStorage.getItem("sakura_cart")) || [];
+  const hasRamen = cart.some(item => item.category === "ramen" && item.quantity > 0);
+  const hasSushi = cart.some(item => item.category === "sushi" && item.quantity > 0);
+  const hasDrink = cart.some(item => item.category === "drink" && item.quantity > 0);
+
   if (code === "SAKURA10") {
-    discountPercent = 10;
+    activePromoCode = code;
     msg.style.color = "green";
     msg.textContent = "Áp dụng mã giảm 10% thành công!";
+  } else if (code === "RAMENCOMBO" && hasRamen && hasDrink) {
+    activePromoCode = code;
+    msg.style.color = "green";
+    msg.textContent = "Combo Ramen & nước đã được giảm 15%!";
+  } else if (code === "SUSHICOMBO" && hasSushi && hasDrink) {
+    activePromoCode = code;
+    msg.style.color = "green";
+    msg.textContent = "Combo Sushi & nước đã được giảm 10%!";
   } else {
-    discountPercent = 0;
+    activePromoCode = "";
     msg.style.color = "red";
-    msg.textContent = "Mã giảm giá không hợp lệ.";
+    msg.textContent = "Mã không hợp lệ hoặc giỏ hàng chưa đủ món cho combo.";
   }
   calculateTotals();
 }
@@ -80,7 +118,15 @@ function calculateTotals() {
   let cart = JSON.parse(localStorage.getItem("sakura_cart")) || [];
   const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   const ship = subtotal > 0 ? 25000 : 0;
-  const discount = (subtotal * discountPercent) / 100;
+  const discount = getPromoDiscount(cart);
+  if (activePromoCode && activePromoCode !== "SAKURA10" && discount === 0) {
+    activePromoCode = "";
+    const msg = document.getElementById("promo-msg");
+    if (msg) {
+      msg.style.color = "red";
+      msg.textContent = "Combo không còn đủ món để áp dụng mã giảm giá.";
+    }
+  }
   const total = subtotal + ship - discount;
 
   document.getElementById("subtotal-price").textContent = subtotal.toLocaleString() + " đ";

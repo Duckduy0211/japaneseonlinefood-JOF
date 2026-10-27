@@ -26,19 +26,35 @@
     </div>
   </header>
 
+  <section class="promo-intro">
+    <span class="hero-kicker"><i class="fa-solid fa-sparkles"></i> Ưu đãi đặc biệt</span>
+    <h1>Thưởng vị ngon, nhận ưu đãi</h1>
+    <p>Chọn combo yêu thích và nhập mã tại giỏ hàng để tiết kiệm hơn.</p>
+  </section>
+
   <main class="container">
-    <h2 style="margin-bottom: 1.5rem;">Chương Trình Khuyến Mãi</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-      <div class="card" style="padding: 1.5rem;">
-        <h3 style="color: #C62828; margin-bottom: 0.5rem;">Giảm 10% Đơn Hàng Đầu Tiên</h3>
-        <p style="margin-bottom: 1rem; color: #666;">Nhập mã: <strong style="color:#000;">SAKURA10</strong> khi thanh toán để nhận ưu đãi giảm 10% tổng giá trị đơn hàng.</p>
-        <button class="btn-cta" onclick="window.location.href='menu.html'">Đặt món ngay</button>
-      </div>
-      <div class="card" style="padding: 1.5rem;">
-        <h3 style="color: #C62828; margin-bottom: 0.5rem;">Combo Ramen Tặng Nước</h3>
-        <p style="margin-bottom: 1rem; color: #666;">Miễn phí 1 ly trà xanh Nhật Bản khi mua bất kỳ tô Ramen nào trong tuần.</p>
-        <button class="btn-cta" onclick="window.location.href='menu.html'">Xem thực đơn</button>
-      </div>
+    <div class="promo-grid">
+      <article class="card promo-card">
+        <div class="promo-icon"><i class="fa-solid fa-ticket"></i></div>
+        <h2>Ưu đãi chào bạn mới</h2>
+        <p>Giảm 10% tổng giá trị món ăn cho đơn hàng của bạn.</p>
+        <span class="promo-code">SAKURA10</span>
+        <a class="btn-cta" href="menu.html">Khám phá thực đơn</a>
+      </article>
+      <article class="card promo-card">
+        <div class="promo-icon"><i class="fa-solid fa-bowl-food"></i></div>
+        <h2>Combo Ramen & Matcha</h2>
+        <p>Chọn một món ramen cùng một ly nước bất kỳ, giảm 15% giá combo.</p>
+        <span class="promo-code">RAMENCOMBO</span>
+        <button class="btn-cta" onclick="addToCart(3); addToCart(21); window.location.href='cart.html?promo=RAMENCOMBO'">Thêm combo vào giỏ</button>
+      </article>
+      <article class="card promo-card">
+        <div class="promo-icon"><i class="fa-solid fa-fish"></i></div>
+        <h2>Combo Sushi & Trà</h2>
+        <p>Kết hợp sashimi tổng hợp với một món nước, giảm 10% giá combo.</p>
+        <span class="promo-code">SUSHICOMBO</span>
+        <button class="btn-cta" onclick="addToCart(2); addToCart(22); window.location.href='cart.html?promo=SUSHICOMBO'">Thêm combo vào giỏ</button>
+      </article>
     </div>
   </main>
 
@@ -47,7 +63,8 @@
     <div class="footer-bottom"><p>&copy; 2026 Sakura Japanese Food.</p></div>
   </footer>
 
-  <script src="../js/main.js"></script>
-  <script src="../js/assistant.js"></script>
+  <script src="../javascripts/main.js"></script>
+  <script src="../javascripts/menu.js"></script>
+  <script src="../javascripts/assistant.js"></script>
 </body>
 </html>

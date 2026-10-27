@@ -18,11 +18,13 @@ const menuProducts = [
   { id: 17, name: "Oyakodon", category: "rice", price: 95000, desc: "Cơm gà và trứng kiểu Nhật với nước sốt dashi.", image: "../images/oyakodon.jpg", tag: "Mới" },
   { id: 18, name: "Mochi Truyền Thống", category: "dessert", price: 55000, desc: "Bánh mochi mềm dẻo, món tráng miệng truyền thống Nhật Bản.", image: "../images/mochi.jpg", tag: "Mới" },
   { id: 19, name: "Trà Xanh Matcha Latte", category: "drink", price: 45000, desc: "Hương vị matcha Uji nguyên chất hòa quyện cùng sữa tươi.", image: "../images/matcha_latte.jpg", tag: "Đồ uống" },
-  { id: 20, name: "Trà Genmaicha", category: "drink", price: 180000, desc: "Genmaicha là sự kết hợp giữa trà xanh và gạo lứt rang thơm nức.", image: "../images/genmaicha.jpg", tag: "Đồ uống" }
+  { id: 20, name: "Trà Genmaicha", category: "drink", price: 180000, desc: "Genmaicha là sự kết hợp giữa trà xanh và gạo lứt rang thơm nức.", image: "../images/genmaicha.jpg", tag: "Đồ uống" },
+  { id: 21, name: "Matcha Đá Xay", category: "drink", price: 55000, desc: "Matcha Nhật xay mịn cùng sữa tươi và đá, mát lạnh thơm béo.", image: "../images/matcha_iceblended.jpg", tag: "Mới" },
+  { id: 22, name: "Hojicha latte", category: "drink", price: 50000, desc: "Trà xanh rang Hojicha pha sữa, thơm dịu và béo nhẹ.", image: "../images/hochija_latte.jpg", tag: "Mới" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.getElementById("menu-product-grid");
+  const grid = document.getElementById("menu-product-grid") || document.getElementById("home-product-grid");
   const searchInput = document.getElementById("search-input");
   const categoryFilter = document.getElementById("category-filter");
   const sortFilter = document.getElementById("sort-filter");
