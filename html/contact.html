@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ - Sakura Japanese Food</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><i class="fa-solid fa-utensils"></i> Sakura Japanese Food</a>
+      <nav class="nav-links">
+        <a href="index.html">Trang chủ</a>
+        <a href="menu.html">Thực đơn</a>
+        <a href="promotions.html">Khuyến mãi</a>
+        <a href="contact.html" class="active">Liên hệ</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-icon-btn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge">0</span></a>
+        <button class="btn-cta" onclick="window.location.href='menu.html'">Đặt món</button>
+        <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 style="margin-bottom: 1.5rem;">Liên Hệ Với Chúng Tôi</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+      <div>
+        <p style="margin-bottom: 0.75rem;"><strong>Địa chỉ:</strong> 123 Đường Lê Văn Việt, TP. Thủ Đức, TP.HCM</p>
+        <p style="margin-bottom: 0.75rem;"><strong>Hotline:</strong> 0909 123 456</p>
+        <p style="margin-bottom: 0.75rem;"><strong>Email:</strong> support@sakurafood.vn</p>
+        <p style="margin-bottom: 0.75rem;"><strong>Giờ mở cửa:</strong> 09:00 - 22:00 (Thứ Hai - Chủ Nhật)</p>
+      </div>
+      <form onsubmit="alert('Cảm ơn bạn đã gửi tin nhắn!'); return false;" style="background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #E0DCD0;">
+        <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Gửi thắc mắc</h3>
+        <div style="margin-bottom: 1rem;"><input type="text" placeholder="Họ và tên" required style="width: 100%; padding: 0.5rem; border: 1px solid #E0DCD0; border-radius: 4px;"></div>
+        <div style="margin-bottom: 1rem;"><input type="email" placeholder="Email hoặc SĐT" required style="width: 100%; padding: 0.5rem; border: 1px solid #E0DCD0; border-radius: 4px;"></div>
+        <div style="margin-bottom: 1rem;"><textarea placeholder="Nội dung" rows="4" required style="width: 100%; padding: 0.5rem; border: 1px solid #E0DCD0; border-radius: 4px;"></textarea></div>
+        <button type="submit" class="btn-cta" style="width: 100%;">Gửi liên hệ</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container"><div class="footer-col"><h3>Sakura Japanese Food</h3></div></div>
+    <div class="footer-bottom"><p>&copy; 2026 Sakura Japanese Food.</p></div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/assistant.js"></script>
+</body>
+</html>

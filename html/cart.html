@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng & Thanh toán - Sakura Japanese Food</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><i class="fa-solid fa-utensils"></i> Sakura Japanese Food</a>
+      <nav class="nav-links">
+        <a href="index.html">Trang chủ</a>
+        <a href="menu.html">Thực đơn</a>
+        <a href="promotions.html">Khuyến mãi</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-icon-btn active"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge">0</span></a>
+        <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 style="margin-bottom: 1.5rem;">Giỏ Hàng Của Bạn</h2>
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
+      <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #E0DCD0;" id="cart-items-container">
+        <!-- Render danh sách sản phẩm trong giỏ -->
+      </div>
+      <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #E0DCD0;">
+        <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Tổng Quan Đơn Hàng</h3>
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+          <input type="text" id="promo-code-input" placeholder="Mã giảm giá (VD: SAKURA10)" style="flex: 1; padding: 0.5rem; border: 1px solid #E0DCD0; border-radius: 4px;">
+          <button id="apply-promo-btn" style="padding: 0.5rem 1rem; background: #252525; color: white; border: none; border-radius: 4px; cursor: pointer;">Áp dụng</button>
+        </div>
+        <p id="promo-msg" style="font-size: 0.85rem; margin-bottom: 1rem;"></p>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"><span>Tạm tính:</span><span id="subtotal-price">0 đ</span></div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"><span>Phí giao hàng:</span><span id="shipping-fee">0 đ</span></div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; color: #C62828;"><span>Giảm giá:</span><span id="discount-amount">0 đ</span></div>
+        <hr style="margin-bottom: 0.75rem; border: 0; border-top: 1px solid #E0DCD0;">
+        <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.1rem; margin-bottom: 1.5rem;"><span>Tổng thanh toán:</span><span id="final-total" style="color: #C62828;">0 đ</span></div>
+
+        <form id="checkout-form">
+          <h4 style="margin-bottom: 0.75rem; font-size: 1rem;">Thông tin giao hàng</h4>
+          <div style="margin-bottom: 0.75rem;"><input type="text" id="fullname" placeholder="Họ và tên" required style="width: 100%; padding: 0.5rem; border: 1px solid #E0DCD0; border-radius: 4px;"></div>
+          <div style="margin-bottom: 0.75rem;"><input type="tel" id="phone" placeholder="Số điện thoại" required style="width: 100%; padding: 0.5rem; border: 1px solid #E0DCD0; border-radius: 4px;"></div>
+          <div style="margin-bottom: 1rem;"><input type="text" id="address" placeholder="Địa chỉ giao hàng" required style="width: 100%; padding: 0.5rem; border: 1px solid #E0DCD0; border-radius: 4px;"></div>
+          <button type="submit" class="btn-cta" style="width: 100%; padding: 0.75rem;">Xác nhận đặt hàng</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container"><div class="footer-col"><h3>Sakura Japanese Food</h3></div></div>
+    <div class="footer-bottom"><p>&copy; 2026 Sakura Japanese Food.</p></div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/assistant.js"></script>
+</body>
+</html>

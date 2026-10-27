@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khuyến mãi - Sakura Japanese Food</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><i class="fa-solid fa-utensils"></i> Sakura Japanese Food</a>
+      <nav class="nav-links">
+        <a href="index.html">Trang chủ</a>
+        <a href="menu.html">Thực đơn</a>
+        <a href="promotions.html" class="active">Khuyến mãi</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-icon-btn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge">0</span></a>
+        <button class="btn-cta" onclick="window.location.href='menu.html'">Đặt món</button>
+        <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 style="margin-bottom: 1.5rem;">Chương Trình Khuyến Mãi</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      <div class="card" style="padding: 1.5rem;">
+        <h3 style="color: #C62828; margin-bottom: 0.5rem;">Giảm 10% Đơn Hàng Đầu Tiên</h3>
+        <p style="margin-bottom: 1rem; color: #666;">Nhập mã: <strong style="color:#000;">SAKURA10</strong> khi thanh toán để nhận ưu đãi giảm 10% tổng giá trị đơn hàng.</p>
+        <button class="btn-cta" onclick="window.location.href='menu.html'">Đặt món ngay</button>
+      </div>
+      <div class="card" style="padding: 1.5rem;">
+        <h3 style="color: #C62828; margin-bottom: 0.5rem;">Combo Ramen Tặng Nước</h3>
+        <p style="margin-bottom: 1rem; color: #666;">Miễn phí 1 ly trà xanh Nhật Bản khi mua bất kỳ tô Ramen nào trong tuần.</p>
+        <button class="btn-cta" onclick="window.location.href='menu.html'">Xem thực đơn</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container"><div class="footer-col"><h3>Sakura Japanese Food</h3></div></div>
+    <div class="footer-bottom"><p>&copy; 2026 Sakura Japanese Food.</p></div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/assistant.js"></script>
+</body>
+</html>

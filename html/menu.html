@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thực đơn - Sakura Japanese Food</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><i class="fa-solid fa-utensils"></i> Sakura Japanese Food</a>
+      <nav class="nav-links">
+        <a href="index.html">Trang chủ</a>
+        <a href="menu.html" class="active">Thực đơn</a>
+        <a href="promotions.html">Khuyến mãi</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-icon-btn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge">0</span></a>
+        <button class="btn-cta" onclick="window.location.href='cart.html'">Giỏ hàng</button>
+        <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 style="margin-bottom: 1.5rem;">Thực Đơn Món Nhật</h2>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+      <input type="text" id="search-input" placeholder="Tìm tên món ăn..." style="padding: 0.5rem 1rem; border: 1px solid #E0DCD0; border-radius: 6px; flex: 1; min-width: 200px;">
+      <select id="category-filter" style="padding: 0.5rem 1rem; border: 1px solid #E0DCD0; border-radius: 6px;">
+        <option value="all">Tất cả danh mục</option>
+        <option value="sushi">Sushi & Sashimi</option>
+        <option value="ramen">Ramen & Udon</option>
+        <option value="rice">Cơm Nhật</option>
+        <option value="bento">Bento</option>
+        <option value="tempura">Tempura</option>
+      </select>
+      <select id="sort-filter" style="padding: 0.5rem 1rem; border: 1px solid #E0DCD0; border-radius: 6px;">
+        <option value="default">Sắp xếp mặc định</option>
+        <option value="asc">Giá: Thấp đến Cao</option>
+        <option value="desc">Giá: Cao đến Thấp</option>
+      </select>
+    </div>
+    <div id="menu-product-grid" class="grid-products"></div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col"><h3>Sakura Japanese Food</h3><p>Ẩm thực chuẩn vị Nhật Bản.</p></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Sakura Japanese Food.</p></div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/assistant.js"></script>
+</body>
+</html>

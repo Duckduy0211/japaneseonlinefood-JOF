@@ -1,0 +1,395 @@
+/* ==========================================
+   SAKURA JAPANESE FOOD - DESIGN SYSTEM
+   ========================================== */
+:root {
+  --primary-red: #C62828;
+  --primary-dark-red: #8E0000;
+  --bg-cream: #FFFDF7;
+  --text-charcoal: #252525;
+  --accent-gold: #E8C878;
+  --border-color: #E0DCD0;
+  --white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Be Vietnam Pro', 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg-cream);
+  color: var(--text-charcoal);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* Header & Navigation */
+header {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary-red);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: var(--text-charcoal);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--primary-red);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.cart-icon-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--text-charcoal);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--primary-red);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.btn-cta {
+  background-color: var(--primary-red);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cta:hover { background-color: var(--primary-dark-red); }
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Container & Layout */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1579871494447-9811cf80d66c?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--accent-gold);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: var(--text-charcoal);
+}
+
+/* Grids & Cards */
+.grid-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--primary-red);
+}
+
+/* Footer */
+footer {
+  background-color: var(--text-charcoal);
+  color: #CCC;
+  padding: 3rem 1rem 1rem;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col h3 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.footer-col ul li { margin-bottom: 0.5rem; }
+.footer-col ul li a:hover { color: white; }
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #444;
+  font-size: 0.85rem;
+}
+
+/* ==========================================
+   VIRTUAL AI ASSISTANT CHATBOT STYLES
+   ========================================== */
+.ai-fab {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--primary-red);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(198, 40, 40, 0.4);
+  cursor: pointer;
+  z-index: 9999;
+  transition: transform 0.2s;
+  border: none;
+}
+.ai-fab:hover { transform: scale(1.08); }
+
+.ai-chat-box {
+  position: fixed;
+  bottom: 95px;
+  right: 25px;
+  width: 350px;
+  height: 480px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  display: none;
+  flex-direction: column;
+  z-index: 9999;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.ai-chat-header {
+  background-color: var(--primary-red);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.ai-chat-body {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: #FAFAFA;
+}
+
+.ai-msg {
+  max-width: 80%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.ai-msg.bot {
+  background-color: white;
+  color: var(--text-charcoal);
+  align-self: flex-start;
+  border: 1px solid var(--border-color);
+}
+
+.ai-msg.user {
+  background-color: var(--primary-red);
+  color: white;
+  align-self: flex-end;
+}
+
+.ai-chat-footer {
+  padding: 0.75rem;
+  background: white;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ai-chat-footer input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.ai-chat-footer button {
+  background-color: var(--primary-red);
+  color: white;
+  border: none;
+  padding: 0 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .nav-links.active { display: flex; }
+  .hamburger { display: block; }
+  .hero h1 { font-size: 2.2rem; }
+  .ai-chat-box { width: 90%; right: 5%; left: 5%; }
+}

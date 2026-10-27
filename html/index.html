@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakura Japanese Food - Tinh Hoa Ẩm Thực Nhật Bản</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><i class="fa-solid fa-utensils"></i> Sakura Japanese Food</a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Trang chủ</a>
+        <a href="menu.html">Thực đơn</a>
+        <a href="promotions.html">Khuyến mãi</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-icon-btn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge">0</span></a>
+        <button class="btn-cta" onclick="window.location.href='menu.html'">Đặt món ngay</button>
+        <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Tinh Hoa Ẩm Thực Nhật Bản</h1>
+    <p>Thưởng thức hương vị Nhật Bản chuẩn vị, tươi ngon và giao tận nhà.</p>
+    <div class="hero-buttons">
+      <button class="btn-cta" onclick="window.location.href='menu.html'">Khám phá thực đơn</button>
+      <button class="btn-secondary" onclick="window.location.href='promotions.html'">Xem ưu đãi hôm nay</button>
+    </div>
+  </section>
+
+  <main class="container">
+    <h2 style="margin-bottom: 1.5rem; text-align: center;">Món Ăn Bán Chạy</h2>
+    <div class="grid-products" id="menu-product-grid">
+      <!-- Render từ menu.js -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Sakura Japanese Food</h3>
+        <p>Tinh hoa ẩm thực truyền thống Nhật Bản chuẩn vị tại Việt Nam.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Liên kết nhanh</h3>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="menu.html">Thực đơn</a></li>
+          <li><a href="promotions.html">Khuyến mãi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Sakura Japanese Food. All rights reserved.</p></div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/assistant.js"></script>
+</body>
+</html>
