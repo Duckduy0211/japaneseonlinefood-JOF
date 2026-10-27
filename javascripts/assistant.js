@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Tạo khung widget trợ lý ảo tự động gắn vào trang
   const fab = document.createElement("button");
   fab.className = "ai-fab";
   fab.innerHTML = `<i class="fa-solid fa-robot"></i>`;
@@ -13,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <button id="close-ai" style="background:none; border:none; color:white; font-size:1.2rem; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="ai-chat-body" id="ai-messages">
-      <div class="ai-msg bot">Konnichiwa! Tôi là trợ lý ảo Sakura. Tôi có thể giúp gì cho bạn về thực đơn, mã giảm giá hay tư vấn món ăn hôm nay?</div>
+      <div class="ai-msg bot">Konnichiwa! Tôi là trợ lý ảo Sakura. Bạn cần tư vấn về thực đơn 12 món chuẩn Nhật hay mã giảm giá hôm nay không?</div>
     </div>
     <div class="ai-chat-footer">
       <input type="text" id="ai-input" placeholder="Nhập câu hỏi...">
@@ -34,23 +33,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const text = input.value.trim();
     if (!text) return;
 
-    // Tin nhắn người dùng
     container.innerHTML += `<div class="ai-msg user">${text}</div>`;
     input.value = "";
     container.scrollTop = container.scrollHeight;
 
-    // AI Phản hồi tự động thông minh
     setTimeout(() => {
-      let reply = "Xin lỗi, tôi chưa hiểu rõ ý bạn. Bạn có thể hỏi về thực đơn sushi, ramen, mã giảm giá SAKURA10 hoặc thời gian mở cửa nhé!";
+      let reply = "Xin lỗi, tôi chưa hiểu rõ ý bạn. Bạn có thể hỏi về sushi, ramen, đồ uống hoặc mã giảm giá SAKURA10 nhé!";
       const lower = text.toLowerCase();
-      if (lower.includes("món") || lower.includes("ngon") || lower.includes("gợi ý")) {
-        reply = "Tôi gợi ý bạn thử **Sushi Cá Hồi** tươi ngon hoặc **Ramen Tonkotsu** đậm đà chuẩn vị Nhật Bản đang rất được yêu thích!";
+      if (lower.includes("món") || lower.includes("ngون") || lower.includes("gợi ý") || lower.includes("ăn gì")) {
+        reply = "Tôi gợi ý bạn thử **Sushi Cá Hồi**, **Ramen Tonkotsu** đậm đà hoặc nhâm nhi ly **Matcha Latte** thanh mát nhé!";
       } else if (lower.includes("mã") || lower.includes("giảm giá") || lower.includes("km") || lower.includes("khuyến mãi")) {
-        reply = "Bạn có thể sử dụng mã **SAKURA10** để được giảm ngay 10% cho đơn hàng đầu tiên nhé!";
+        reply = "Bạn hãy nhập mã **SAKURA10** tại trang giỏ hàng để được giảm ngay 10% cho tổng đơn hàng!";
       } else if (lower.includes("địa chỉ") || lower.includes("ở đâu") || lower.includes("liên hệ")) {
-        reply = "Nhà hàng Sakura tọa lạc tại trung tâm TP.HCM. Bạn có thể xem chi tiết tại trang **Liên hệ** hoặc gọi hotline 0909 xxx xxx.";
+        reply = "Nhà hàng Sakura tọa lạc tại 123 Đường Lê Văn Việt, TP. Thủ Đức, TP.HCM. Hân hạnh phục vụ quý khách!";
       } else if (lower.includes("chào") || lower.includes("hi") || lower.includes("hello")) {
-        reply = "Konnichiwa! Chúc bạn một ngày ngon miệng cùng Sakura Japanese Food.";
+        reply = "Konnichiwa! Chúc bạn chọn được món ăn Nhật Bản thật ưng ý hôm nay.";
       }
 
       container.innerHTML += `<div class="ai-msg bot">${reply}</div>`;
